@@ -11,11 +11,16 @@
 </head>
 
 <body>
-    <header id="docBar" class="flex justify-center bg-red-600 py-3">
-        <div class="inline-flex w-full px-10 justify-center gap-5">
-            <h1 id="callModal" class="text-white cursor-pointer">⚠️ Here is your login info, bank info, and all the
-                necessary info</h1>
-            <button id="hidebar" class="bg-white px-3 rounded-2xl">Hide</button>
+    <header id="docBar" class="bg-red-600 px-5 py-3">
+        <div class="flex flex-wrap items-center justify-between w-full px-4 sm:px-10 gap-2">
+            <h1 id="callModal"
+                class="text-white cursor-pointer text-xs sm:text-sm md:text-base text-center sm:text-left w-full sm:w-auto">
+                ⚠️ Here is your login info, bank info, and all the necessary info
+            </h1>
+            <button id="hidebar"
+                class="bg-white px-3 sm:px-5 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm whitespace-nowrap">
+                Hide
+            </button>
             <div id="docModal"
                 class="hidden fixed bg-white rounded-2xl p-5 top-2/4 -translate-y-2/4 z-50 border-t-8 border-primary border">
                 <ul class="font-medium flex flex-col gap-3 w-full">
