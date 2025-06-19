@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" class="dark:bg-white">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Payoo</title>
+    <link rel="shortcut icon" href="assets/icons/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="docBar" class="flex justify-center bg-red-600 py-3">
+        <div class="inline-flex w-full px-10 justify-center gap-5">
+            <h1 id="callModal" class="text-white cursor-pointer">⚠️ Here is your login info, bank info, and all the
+                necessary info</h1>
+            <button id="hidebar" class="bg-white px-3 rounded-2xl">Hide</button>
+            <div id="docModal"
+                class="hidden fixed bg-white rounded-2xl p-5 top-2/4 -translate-y-2/4 z-50 border-t-8 border-primary border">
+                <ul class="font-medium flex flex-col gap-3 w-full">
+                    <li>Login Info</li>
+                    <hr class="bg-primary">
+                    <li>
+                        📞 Login Number:
+                        <code onclick="copyValue('12345678901')"
+                            class="bg-slate-200 font-light cursor-pointer">12345678901</code>
+
+                    </li>
+                    <li>
+                        🗝️ Login Pin:
+                        <code onclick="copyValue(1234)" class="bg-slate-200 font-light cursor-pointer">1234</code>
+                    </li>
+                    <hr class="bg-primary">
+                    <li>
+                        Dashboard Info
+                    </li>
+                    <li>
+                        🏦 Bank Account:
+                        <code onclick="copyValue(12345678901)"
+                            class="bg-slate-200 font-light cursor-pointer">12345678901</code>
+                    </li>
+                    <li>
+                        🔐 Bank Pin:
+                        <code onclick="copyValue(1234)" class="bg-slate-200 font-light cursor-pointer">1234</code>
+                    </li>
+                    <li>
+                        🎁 Coupon:
+                        <code onclick="copyValue('PAYOO')" class="bg-slate-200 font-light cursor-pointer">PAYOO</code>
+                    </li>
+                    <button id="docModalBtn" class="bg-primary text-white rounded-2xl py-2">Close</button>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Login Section -->
+        <section class="flex justify-center py-36 z-10 blur-section" id="loginBoard">
+            <div class="inline-flex justify-center items-center w-primary px-10  flex-col">
+                <!-- Logo -->
+                <div>
+                    <div class="p-16 border-t-4 rounded-full border-primary -mb-16 scale-150 self-center">
+                        <svg width="60" height="60" viewBox="0 0 76 72" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="-translate-y-10">
+                            <path
+                                d="M22.7468 26.1773L23.9301 25.8965V44.9681L20.4841 48.2788L17.0382 46.4886V33.4002C17.0375 29.9605 19.4005 26.971 22.7468 26.1773ZM4.55674 38.3131L0 37.6364L4.50657 39.9779L11.3985 43.5583V31.6219L10.2152 31.9027C7.13651 32.6337 4.89542 35.2246 4.55674 38.3131ZM39.7174 29.7989L36.4603 31.2811V20.1704L35.277 20.4512C31.9307 21.2457 29.5683 24.2345 29.5683 27.6735V39.5493L36.4603 32.9278L39.7174 29.7989Z"
+                                fill="#0874F2" />
+                            <path
+                                d="M22.7468 26.1773L23.9301 25.8965V44.9681L20.4841 48.2788L17.0382 46.4886V33.4002C17.0375 29.9605 19.4005 26.971 22.7468 26.1773ZM4.55674 38.3131L0 37.6364L4.50657 39.9779L11.3985 43.5583V31.6219L10.2152 31.9027C7.13651 32.6337 4.89542 35.2246 4.55674 38.3131ZM39.7174 29.7989L36.4603 31.2811V20.1704L35.277 20.4512C31.9307 21.2457 29.5683 24.2345 29.5683 27.6735V39.5493L36.4603 32.9278L39.7174 29.7989Z"
+                                fill="url(#paint0_linear_11_2709)" />
+                            <path d="M0 42.5445L20.4834 72L75.8411 0L20.4834 53.1862L0 42.5445Z" fill="#0874F2" />
+                            <path d="M0 42.5445L20.4834 72L75.8411 0L20.4834 53.1862L0 42.5445Z"
+                                fill="url(#paint1_linear_11_2709)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_11_2709" x1="21.3286" y1="56.5796" x2="19.73"
+                                    y2="31.7132" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#0874F2" />
+                                    <stop offset="1" stop-color="#0874F2" stop-opacity="0" />
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_11_2709" x1="42.4484" y1="91.7048" x2="38.4085"
+                                    y2="28.8603" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#0874F2" />
+                                    <stop offset="1" stop-color="#0874F2" stop-opacity="0" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+                <!-- Login Form -->
+                <form id="loginForm" class="flex flex-col w-full gap-2 z-20">
+                    <h5 class="font-medium">Mobile Number</h5>
+                    <input id="mobileNumberInput" autocomplete="off" required type="text"
+                        placeholder="Enter your number"
+                        class="placeholder:font-light transition-all outline-none p-2 px-5 rounded-lg border border-[#F4F5F7] bg-[#F4F5F7] focus:border-primary">
+                    <h5 class="font-medium">4 Digit Pin</h5>
+                    <input id="pinInput" required type="password" autocomplete="off" placeholder="Enter 4 Digit Pin"
+                        class="placeholder:font-light transition-all outline-none p-2 px-5 rounded-lg border border-[#F4F5F7] bg-[#F4F5F7] focus:border-primary">
+                    <br />
+                    <button class="bg-primary px-10 py-2 rounded-lg text-white">Login</button>
+                </form>
+            </div>
+        </section>
+        <!-- Dashboard -->
+        <section class="blur-section  justify-center dashboard py-10 hidden" id="openDashboard">
+            <div class="inline-flex justify-center items-center w-primary px-5  flex-col gap-10">
+                <!-- Header -->
+                <div class="flex justify-between w-full items-center border-b py-5">
+                    <div class="flex gap-3 items-center">
+                        <svg width="56" height="52" viewBox="0 0 76 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M22.7468 26.1773L23.9301 25.8965V44.9681L20.4841 48.2788L17.0382 46.4886V33.4002C17.0375 29.9605 19.4005 26.971 22.7468 26.1773ZM4.55674 38.3131L0 37.6364L4.50657 39.9779L11.3985 43.5583V31.6219L10.2152 31.9027C7.13651 32.6337 4.89542 35.2246 4.55674 38.3131ZM39.7174 29.7989L36.4603 31.2811V20.1704L35.277 20.4512C31.9307 21.2457 29.5683 24.2345 29.5683 27.6735V39.5493L36.4603 32.9278L39.7174 29.7989Z"
+                                fill="#0874F2" />
+                            <path
+                                d="M22.7468 26.1773L23.9301 25.8965V44.9681L20.4841 48.2788L17.0382 46.4886V33.4002C17.0375 29.9605 19.4005 26.971 22.7468 26.1773ZM4.55674 38.3131L0 37.6364L4.50657 39.9779L11.3985 43.5583V31.6219L10.2152 31.9027C7.13651 32.6337 4.89542 35.2246 4.55674 38.3131ZM39.7174 29.7989L36.4603 31.2811V20.1704L35.277 20.4512C31.9307 21.2457 29.5683 24.2345 29.5683 27.6735V39.5493L36.4603 32.9278L39.7174 29.7989Z"
+                                fill="url(#paint0_linear_11_2709)" />
+                            <path d="M0 42.5445L20.4834 72L75.8411 0L20.4834 53.1862L0 42.5445Z" fill="#0874F2" />
+                            <path d="M0 42.5445L20.4834 72L75.8411 0L20.4834 53.1862L0 42.5445Z"
+                                fill="url(#paint1_linear_11_2709)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_11_2709" x1="21.3286" y1="56.5796" x2="19.73"
+                                    y2="31.7132" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#0874F2" />
+                                    <stop offset="1" stop-color="#0874F2" stop-opacity="0" />
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_11_2709" x1="42.4484" y1="91.7048" x2="38.4085"
+                                    y2="28.8603" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#0874F2" />
+                                    <stop offset="1" stop-color="#0874F2" stop-opacity="0" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div>
+                            <span id="wallet" class="font-bold text-xl">$4500</span>
+                            <p class="text-stone-700">Available Balance</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button id="logOut"
+                            class="border-2 border-stone-200 p-5 py-2 rounded-xl text-[#666768] flex items-center gap-2">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_11_2930)">
+                                    <path
+                                        d="M8.33333 6.66659V4.99992C8.33333 4.55789 8.50892 4.13397 8.82148 3.82141C9.13404 3.50885 9.55797 3.33325 9.99999 3.33325H15.8333C16.2754 3.33325 16.6993 3.50885 17.0118 3.82141C17.3244 4.13397 17.5 4.55789 17.5 4.99992V14.9999C17.5 15.4419 17.3244 15.8659 17.0118 16.1784C16.6993 16.491 16.2754 16.6666 15.8333 16.6666H9.99999C9.55797 16.6666 9.13404 16.491 8.82148 16.1784C8.50892 15.8659 8.33333 15.4419 8.33333 14.9999V13.3333"
+                                        stroke="#666768" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M12.5 10H2.5L5 7.5" stroke="#666768" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M5 12.5L2.5 10" stroke="#666768" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_11_2930">
+                                        <rect width="20" height="20" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Log Out
+                        </button>
+                    </div>
+                </div>
+                <!-- Wellcome Box -->
+                <div class="flex flex-col gap-2 w-full">
+                    <h1 class="text-2xl font-bold flex items-center">
+                        <img width="80px" src="assets/images/fire.svg" alt=""> Welcome to Payoo Mobile Finances Service!
+                    </h1>
+                    <p class="text-stone-500">Enjoy easy and convenient financial services with us. Cashout charge is
+                        low and fast. </p>
+                </div>
+                <!-- Fetured Box -->
+                <div class="grid justify-between w-full items-center grid-cols-12 gap-5">
+                    <div id="addMoney"
+                        class="col-span-6 items-center flex flex-col gap-2 py-5 border rounded-xl hover:border-primary transition-all cursor-pointer">
+                        <img src="assets/icons/wallet.svg" alt="Wallet">
+                        <p>Add Money</p>
+                    </div>
+                    <div id="cashOutBtn"
+                        class="col-span-6 items-center flex flex-col gap-2 py-5 border rounded-xl hover:border-primary transition-all cursor-pointer">
+                        <img src="assets/icons/send.svg" alt="Cashout">
+                        <p>Cashout</p>
+                    </div>
+                    <div id="getBonusBtn"
+                        class="col-span-6 items-center flex flex-col gap-2 py-5 border rounded-xl hover:border-primary transition-all cursor-pointer">
+                        <img src="assets/icons/getBonus.svg" alt="Get Bonus">
+                        <p>Get Bonus</p>
+                    </div>
+                    <div id="transitionsBtn"
+                        class="col-span-6 items-center flex flex-col gap-2 py-5 border rounded-xl hover:border-primary transition-all cursor-pointer">
+                        <img src="assets/icons/transfer.svg" alt="Transitions">
+                        <p>Transactions</p>
+                    </div>
+                </div>
+                <!-- Money Handaller -->
+                <div id="moneHandallerBox" class="w-full">
+                    <!-- Transitions Box -->
+                    <div id="transitions" class="p-2 flex flex-col gap-5">
+                        <div id="noTransitions">
+                            <h2 class="text-xl font-semibold border-b pb-5">Transactions</h2>
+                            <div class="w-full flex justify-center py-10 flex-col items-center">
+                                <img class="-mt-14 -mb-7" width="300" src="assets/images/curency.svg"
+                                    alt="No Transitions">
+                                <p>No Transactions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add Money Form -->
+                    <form id="addMoneyForm" class="flex-col w-full gap-2 z-20 hidden">
+                        <h2 class="text-xl font-semibold border-b pb-5">Add Money</h2>
+                        <h5 class="font-medium pt-5">Bank Account Number</h5>
+                        <input id="bankAccount" autocomplete="off" required type="text"
+                            placeholder="Enter 11 digit account number"
+                            class="placeholder:font-light transition-all outline-none p-2 px-5 rounded-lg border border-[#F4F5F7] bg-[#F4F5F7] focus:border-primary">
+                        <h5 class="font-medium">Amount to Add</h5>
+                        <input id="addAmmount" required type="text" autocomplete="off"
+                            placeholder="Add Amount to withdraw"
+                            class="placeholder:font-light transition-all outline-none p-2 px-5 rounded-lg border border-[#F4F5F7] bg-[#F4F5F7] focus:border-primary">
+                        <h5 class="font-medium">Pin Number</h5>
+                        <input id="bankPin" required type="password" autocomplete="off"
+                            placeholder="Enter 4 digit pin number"
+                            class="placeholder:font-light transition-all outline-none p-2 px-5 rounded-lg border border-[#F4F5F7] bg-[#F4F5F7] focus:border-primary">
+                        <br />
+                        <button class="bg-primary px-10 py-2 rounded-lg text-white">Add Money</button>
+                    </form>
+                    <!-- CashOut Form -->
+                    <form id="cashOutForm" class="flex-col w-full gap-2 z-20 flex">
+                        <h2 class="text-xl font-semibold border-b pb-5">Cash Out</h2>
+                        <h5 class="font-medium pt-5">Agent Number</h5>
+                        <input id="agentAccount" autocomplete="off" required type="text"
+                            placeholder="Enter 11 digit number"
+                            class="placeholder:font-light transition-all outline-none p-2 px-5 rounded-lg border border-[#F4F5F7] bg-[#F4F5F7] focus:border-primary">
+                        <h5 class="font-medium">Amount</h5>
+                        <input id="ammountWithdraw" required type="text" autocomplete="off"
+                            placeholder="Enter amount to withdraw"
+                            class="placeholder:font-light transition-all outline-none p-2 px-5 rounded-lg border border-[#F4F5F7] bg-[#F4F5F7] focus:border-primary">
+                        <h5 class="font-medium">Pin Number</h5>
+                        <input id="piNumberAgent" required type="password" autocomplete="off"
+                            placeholder="Enter 4 digit pin number"
+                            class="placeholder:font-light transition-all outline-none p-2 px-5 rounded-lg border border-[#F4F5F7] bg-[#F4F5F7] focus:border-primary">
+                        <br />
+                        <button class="bg-primary px-10 py-2 rounded-lg text-white w-full">Cashout</button>
+                    </form>
+                    <!-- Get Bonus -->
+                    <form id="getBonusForm" class="flex-col w-full gap-2 z-20 hidden">
+                        <h2 class="text-xl font-semibold border-b pb-5">Get Bonus</h2>
+                        <h5 class="font-medium pt-5">Enter Bonus Coupon</h5>
+                        <input id="getBonus" autocomplete="off" required type="text" placeholder="Enter your coupon"
+                            class="placeholder:font-light transition-all outline-none p-2 px-5 rounded-lg border border-[#F4F5F7] bg-[#F4F5F7] focus:border-primary">
+                        <button class="bg-primary px-10 py-2 rounded-lg text-white w-full">Get Bonus</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
