@@ -1,6 +1,7 @@
+# Payoo Mobile Finances Service
+
 ![Payoo MFS banner](preview.png)
 
-# Payoo Mobile Finances Service
 
 ## Project Overview
 Payoo Mobile Finances Service is a lightweight, user-friendly web application designed to simplify personal finance management. Built with HTML, CSS, and JavaScript, it allows users to add funds, cash out, view bonuses, and monitor transaction history effortlessly.
