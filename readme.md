@@ -7,7 +7,7 @@
 Payoo Mobile Finances Service is a lightweight, user-friendly web application designed to simplify personal finance management. Built with HTML, CSS, and JavaScript, it allows users to add funds, cash out, view bonuses, and monitor transaction history effortlessly.
 
 ## Live Project Link
-- **[Live Demo](https://ornobaadi.github.io/Payoo-MFS-Updated/)**
+- **[Live Demo](https://shahrukkabir.github.io/e-Wallet/)**
 
 ## Technologies Used
 - **Frontend**: HTML, CSS, Vanilla JavaScript
@@ -40,7 +40,7 @@ This project does not require any external dependencies or libraries.
 ### How to Run Locally
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/ornobaadi/Payoo-MFS-Updated.git
+    git clone https://github.com/shahrukkabir/e-Wallet
     ```
 2. **Navigate to the project folder:**
     ```bash
